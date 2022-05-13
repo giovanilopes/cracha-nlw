@@ -1,0 +1,91 @@
+/* https://efficient-sloth-d85.notion.site/Origin-00a89e06c0b7412bb6daf435243df92d */
+/* https://www.figma.com/community/file/1031698737363668691 */
+*{
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  --black: hsl(240, 6%, 13%);
+  --grey: hsl(240, 9%, 89%); /* adiciona uma variavel */
+
+  display: grid; /* deixa os itens divididos igualmente, trabalha em duas dimensoes */
+  place-items: center; /* colocando os itens centralizados */
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;   /* fonte mais suave */
+}
+
+main{
+  background: url(images/background.svg);
+  width: 375px;
+  height: 812px;
+}
+
+.container{
+  max-width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+  color: var(--grey);
+}
+
+.avatar{
+  width: 10rem;
+  margin: 11.5rem auto 0;
+
+  /*se torna o limite para o position absolute*/
+  position: relative;
+}
+
+.avatar span {
+  position: absolute;
+  top: -15px;
+
+  /*trabalha o posicionamento no eixo z (profundidade)*/
+  z-index: 1;
+}
+
+/* procura a imagem que esta no primeiro nivel */
+.avatar > img {
+  width: 10rem;
+  height: 11.5rem;
+  object-fit: cover; /*faz com que a imagem se adapte as medidas colocadas acima*/
+
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%); /*https://bennettfeely.com/clippy/*/
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+a {
+  color: var(--grey);
+  text-decoration: none;
+
+  margin-top: 0.25rem;
+
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: center;
+}
+
+p{
+  margin-top: 2rem;
+}
+
+ul{
+  margin-top: 4rem;
+  list-style: none; /*tira as bolinhas da lista*/
+
+  display: flex; /*faz com que os elementos fiquem alinhados no elemento x*/
+  gap: 0.5rem; /*adiciona espacos entre os itens*/
+  justify-content: center;
+  padding-right: 40px;
+}
